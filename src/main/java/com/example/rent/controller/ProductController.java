@@ -68,7 +68,6 @@ public class ProductController {
         List<Product> products = productService.getAllProducts().stream()
                 .filter(product -> rentService.findByProduct(product)==null).collect(Collectors.toList());
         modelMap.addAttribute("products",products);
-
         return "pages/products";
     }
 
