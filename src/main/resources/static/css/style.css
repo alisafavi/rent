@@ -1,0 +1,8 @@
+.img-custome{
+    object-fit: scale-down;
+    width: 8rem;
+    height: 8rem;
+}
+body{
+    background-color: red;
+}

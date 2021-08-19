@@ -1,0 +1,25 @@
+<html
+        xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}"
+      with:title="Category">
+
+<th:block layout:fragment="content">
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-6">
+            <form action="#" th:action="@{/category/add}" th:object="${category}" class="border border-secondary rounded p-4" method="post">
+                <h2 class="mb-4">add new category</h2>
+                <hr class="mb-4">
+
+                <div class="d-flex">
+                    <input class="form-control me-3" name="categoryName" th:field="*{name}">
+                    <button class="btn btn-lg btn-success" type="submit">save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</th:block>
+

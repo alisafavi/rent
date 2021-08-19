@@ -1,0 +1,45 @@
+<div class="col-3 d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;height: 100vh;">
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+    </form>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a href="/product/all" class="nav-link active" aria-current="page">
+                <i class="fas fa-home"></i>
+                Products
+            </a>
+        </li>
+        <li>
+            <a href="/product/my_product" class="nav-link link-dark">
+                <i class="fas fa-inbox"></i>
+                My products
+            </a>
+        </li>
+        <li>
+            <a href="/rent/my_rent"  class="nav-link link-dark">
+                <i class="fas fa-shopping-cart"></i>
+                My rent
+            </a>
+        </li>
+        <li>
+            <a href="/category/add"  class="nav-link link-dark">
+                <i class="fa fa-plus"></i>
+                add category
+            </a>
+        </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+            <img th:src="${profimg}" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>mdo</strong>
+        </a>
+        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="/update_user"><i class="fas fa-user-cog"></i> Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Sign out</a></li>
+        </ul>
+    </div>
+</div>

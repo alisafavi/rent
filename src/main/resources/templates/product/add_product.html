@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa"
+      xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="/webjars/font-awesome/5.15.1/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.1.0/css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-6">
+            <form action="#" th:action="@{/product/add}" th:object="${product}" class="border border-secondary rounded p-4" method="post">
+                <h2 class="mb-4">products attributs</h2>
+                <hr class="mb-4">
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <input class="form-control" name="name" placeholder="product name" type="text" th:field="*{name}">
+
+                        <div class="col-12 d-flex mt-3">
+                            <select class="form-select me-2" >
+                                <option th:each="category : ${categories}" th:value="${category.name}"
+                                        th:text="${category.name}" th:field="*{category}"></option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="copy d-none">
+                    <div class="row form-group mt-3">
+                        <div class="col-md-5">
+                            <input class="form-control" name="key" type="text" placeholder="key">
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" name="value" type="text" placeholder="value">
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-danger remove" type="button"><i class="fas fa-minus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <button class="d-block ms-auto btn btn-success add-more mt-4" type="button"><i class="fas fa-plus"></i></button>
+                <hr class="mt-4">
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-lg btn-success" type="submit">save</button>
+                    <a class="px-md-5 btn btn-lg btn-danger" href="/product/my_product">cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script src="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+<script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $(".add-more").click(function(){
+            var html = $(".copy").html();
+            $(".copy").before(html);
+        });
+
+        $("body").on("click",".remove",function(){
+            $(this).parents(".form-group").remove();
+        });
+
+        // $("input[name='key']").change(function (){
+        //     alert("aaa");
+        // });
+
+    });
+
+</script>
+
+</body>
+</html>

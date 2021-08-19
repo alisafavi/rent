@@ -1,0 +1,21 @@
+<html
+        xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}"
+      with:title="Cities">
+
+<th:block layout:fragment="content">
+
+    <div class="row p-4">
+        <div class="col-3 mb-4" th:each="product : ${products}" th:id="|product_${product.id}|">
+            <div class="bg-light rounded-3 shadow p-4 text-center position-relative">
+                <img class="mb-4 rounded-3 img-custome product-img" src="../../static/image/noimage.png">
+                <p th:text="${product.name}"></p>
+                <a class="btn btn-success " th:href="@{|/rent/new/${product.id}|}">rent</a>
+            </div>
+        </div>
+    </div>
+
+</th:block>
+

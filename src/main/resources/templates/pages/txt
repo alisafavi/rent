@@ -1,0 +1,4 @@
+
+<th:block layout:insert="~{fragments/pagetitle}"/>
+<th:block layout:fragment="body_end"/>
+<th:block layout:replace="~{fragments/body_scripts :: end}"/>
